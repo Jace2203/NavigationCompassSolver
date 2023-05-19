@@ -1,9 +1,68 @@
 <html>
     <head>
         <title>AAAA</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
         <script src="NavComp.js"></script>
+        <script src="tree.js"></script>
+        <script src="solver.js"></script>
+        <script src="events.js"></script>
+        
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        Hello!
+        <div class="compass">
+            <img src="http://placekitten.com/300/300">
+        </div>
+        <div class="rings">
+            <div class="ring">
+                <input type="range" min="1" max="4" value="1" class="ring_slider" id="z0">
+                <p>1</p>
+            </div>
+            <div class="ring">
+                <input type="range" min="1" max="4" value="4" class="ring_slider" id="z1">
+                <p>4</p>
+            </div>
+            <div class="ring">
+                <input type="range" min="1" max="4" value="3" class="ring_slider" id="z2">
+                <p>3</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <div class="action">
+                <div class="action_checkbox">
+                    <input type="checkbox" class="f0" checked>
+                    <input type="checkbox" class="f1" checked>
+                    <input type="checkbox" class="f2">
+                </div>
+                <img src="http://placekitten.com/100">
+            </div>
+            <div class="action">
+                <div class="action_checkbox">
+                    <input type="checkbox" class="f0">
+                    <input type="checkbox" class="f1" checked>
+                    <input type="checkbox" class="f2" checked>
+                </div>
+                <img src="http://placekitten.com/100">
+            </div>
+            <div class="action">
+                <div class="action_checkbox">
+                    <input type="checkbox" class="f0" checked>
+                    <input type="checkbox" class="f1">
+                    <input type="checkbox" class="f2" checked>
+                </div>
+                <img src="http://placekitten.com/100">
+            </div>
+        </div>
+
+        <div>
+            <input type="button" value="Solve" id="solve_btn">
+        </div>
+
+        <div class="result">
+            <h3>Result:</h3>
+            <p></p>
+        </div>
     </body>
 </html>

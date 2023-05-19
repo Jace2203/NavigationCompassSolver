@@ -1,0 +1,25 @@
+.rings {
+    display: flex;
+    padding: 10px 0;
+}
+
+.ring {
+    padding: 0 10px;
+}
+
+.actions {
+    display: flex;
+    padding: 10px 0;
+}
+
+.action {
+    padding: 0 10px;
+}
+
+.action_checkbox {
+    display: flex;
+}
+
+.action_checkbox > input {
+    flex: auto;
+}

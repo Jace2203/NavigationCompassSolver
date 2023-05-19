@@ -11,55 +11,35 @@ const convert = (count) => {
 }
 
 class NavComp {
-    constructor(first, second, third, f1, f2, f3, s1, s2, s3) {
-        this.z = [convert(first), convert(second), convert(third)];
-
-        this.f1 = f1;
-        this.f2 = f2;
-        this.f3 = f3;
-
-        this.s = [s1, s2, s3];
-    }
-
-    getState() {
-        return this.s;
+    constructor() {
+        this.z = [1,4,3];
+        this.z_c = Array.from(this.z, x => convert(x));
+        this.f = [[1,1,0],[0,1,1],[1,0,1]];
     }
 
     getSize() {
         return this.z;
     }
 
-    A() {
-        for (var i = 0; i < 3; i++) {
-            this.s[i] += this.f1[i];
-            this.s[i] = this.s[i] % this.z[i];
-        }
+    getF(i) {
+        return f[i];
     }
 
-    B() {
-        for (var i = 0; i < 3; i++) {
-            this.s[i] += this.f2[i];
-            this.s[i] = this.s[i] % this.z[i];
-        }
+    setSize(index, value) {
+        this.z[index] = value;
+        this.z_c[index] = convert(value);
+        this.s = [0,0,0];
     }
 
-    C() {
-        for (var i = 0; i < 3; i++) {
-            this.s[i] += this.f3[i];
-            this.s[i] = this.s[i] % this.z[i];
+    setAction(index, value) {
+        this.f[index] = value;
+    }
+
+    F(s, j) {
+        let t = [];
+        for (let i = 0; i < 3; i++) {
+            t.push((s[i] + this.f[j][i]) % this.z_c[i]);
         }
+        return t;
     }
 }
-
-/*
-var temp = new NavComp(1, 4, 3, [1,1,0], [0,1,1], [1,0,1], 3, 2, 1);
-console.log(temp.getState());
-temp.A();
-console.log(temp.getState());
-temp.B();
-console.log(temp.getState());
-temp.C();
-console.log(temp.getState());
-temp.A();
-console.log(temp.getState());
-*/
