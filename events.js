@@ -27,7 +27,6 @@ $(document).ready(() => {
     $(".ring_slider").each(function() {
         $(this).on("change", () => {
             let value = $(this).val();
-            $(this).siblings("p").text(value);
             switch ($(this).attr("id"))
             {
                 case "z0": i = 0; break;
@@ -41,6 +40,18 @@ $(document).ready(() => {
             });
             updateCompass();
         });
+
+        $(this).on("change input", () => {
+            let value = $(this).val();
+            let str = "";
+            for (let i = 0; i < 4; i++) {
+                if (i < value)
+                    str += "🌕 ";
+                else
+                    str += "🌑 ";
+            }
+            $(this).siblings("p").text(str);
+        });
     })
 
     $(".turn_btns>input").each(function() {
@@ -53,6 +64,16 @@ $(document).ready(() => {
             updateCompass();
         })
     })
+    
+    $(".action_checkbox>input").each(function() {
+        $(this).on("click", () => {
+            let i = $(this).attr("class")[1];
+            let c = "fill:";
+            c += ($(this)[0].checked ? "rgb(200,190,120)" : "rgb(62,81,95)");
+            c += ";stroke-width:2;stroke:rgb(233,221,153)";
+            $(this).parent().siblings("svg").children(".r" + i).attr("style", c);
+        });
+    });
 
     $("#solve_btn").on("click", () => {
         let s = [0,0,0];
@@ -70,9 +91,13 @@ $(document).ready(() => {
 
         let result = solve(s);
         let str = "";
-        result.forEach(value => {
-            str += (value + 1) + " ";
-        });
+        if (result.length) {
+            result.forEach(value => {
+                str += (value + 1) + " ";
+            });
+        } else {
+            str = "No Solution";
+        }
 
         $(".result>p").html(str);
     })

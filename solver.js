@@ -42,6 +42,9 @@ let solve = (s) => {
     }
 
     let result = [];
-    root.search([0,0,0]).toRoot(result);
+    let solution = root.search([0,0,0]);
+    if (solution !== null) {
+        solution.toRoot(result);
+    }
     return result;
 }

@@ -25,20 +25,46 @@ body {
 
 .rings {
     display: flex;
-    padding: 10px 0;
+    gap: 40px;
 }
 
-.ring {
-    padding: 0 10px;
+.ring > p {
+    user-select: none;
+    font-size: 30;
+}
+
+.ring > input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 175px;
+    margin-left: 5px;
+    margin-top: -64px;
+}
+
+.ring > input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 30px;
+    border-radius: 15px;
+    background: transparent;
+}
+
+.ring > input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background: transparent;
 }
 
 .actions {
     display: flex;
     padding: 10px 0;
-}
-
-.action {
-    padding: 0 10px;
+    gap: 126px;
+    margin-left: 44px;
 }
 
 .action_checkbox {
