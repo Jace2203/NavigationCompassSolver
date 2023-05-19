@@ -20,6 +20,7 @@ class Tree {
 
     addChild(f, value) {
         this.children.set(f, new Tree(this, value));
+        return this.children.get(f);
     }
 
     getChild(f) {

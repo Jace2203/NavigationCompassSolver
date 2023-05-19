@@ -11,58 +11,88 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div class="compass">
-            <img src="http://placekitten.com/300/300">
-        </div>
-        <div class="rings">
-            <div class="ring">
-                <input type="range" min="1" max="4" value="1" class="ring_slider" id="z0">
-                <p>1</p>
+        <div class="container">
+            <div class="compass">
+                <svg width="350" height="350">
+                    <circle cx="175" cy="175" r="150" style="fill:rgb(62,81,95);stroke-width:3;stroke:rgb(233,221,153)"></circle>
+                    <circle cx="175" cy="175" r="100" style="fill:rgb(62,81,95);stroke-width:3;stroke:rgb(233,221,153)"></circle>
+                    <circle cx="175" cy="175" r="50" style="fill:rgb(62,81,95);stroke-width:3;stroke:rgb(233,221,153)"></circle>
+                    <rect id="light_0" x="28" y="170" width="46" height="10"
+                    style="fill:aqua"></rect>
+                    <rect id="light_1" x="78" y="170" width="46" height="10"
+                    style="fill:aqua"></rect>
+                    <rect id="light_2" x="128" y="170" width="46" height="10"
+                    style="fill:aqua"></rect>
+                </svg>
+                <div class="state">
+                    <input type="range" min="0" max="5" value="3" id="s0">
+                    <input type="range" min="0" max="3" value="2" id="s1">
+                    <input type="range" min="0" max="2" value="1" id="s2">
+                </div>
+                <div class="turn_btns">
+                    <input type="button" id="state_0" value="First Ring">
+                    <input type="button" id="state_1" value="Second Ring">
+                    <input type="button" id="state_2" value="Third Ring">
+                </div>
             </div>
-            <div class="ring">
-                <input type="range" min="1" max="4" value="4" class="ring_slider" id="z1">
-                <p>4</p>
-            </div>
-            <div class="ring">
-                <input type="range" min="1" max="4" value="3" class="ring_slider" id="z2">
-                <p>3</p>
+            
+            <div class="solution">
+                <div>
+                    <input type="button" value="Solve" id="solve_btn">
+                </div>
+
+                <div class="result">
+                    <h3>Result:</h3>
+                    <p></p>
+                </div>
             </div>
         </div>
 
-        <div class="actions">
-            <div class="action">
-                <div class="action_checkbox">
-                    <input type="checkbox" class="f0" checked>
-                    <input type="checkbox" class="f1" checked>
-                    <input type="checkbox" class="f2">
+        <div class="container">
+            <div class="rings">
+                <div class="ring">
+                    <input type="range" min="1" max="4" value="1" class="ring_slider" id="z0">
+                    <p>1</p>
                 </div>
-                <img src="http://placekitten.com/100">
-            </div>
-            <div class="action">
-                <div class="action_checkbox">
-                    <input type="checkbox" class="f0">
-                    <input type="checkbox" class="f1" checked>
-                    <input type="checkbox" class="f2" checked>
+                <div class="ring">
+                    <input type="range" min="1" max="4" value="4" class="ring_slider" id="z1">
+                    <p>4</p>
                 </div>
-                <img src="http://placekitten.com/100">
-            </div>
-            <div class="action">
-                <div class="action_checkbox">
-                    <input type="checkbox" class="f0" checked>
-                    <input type="checkbox" class="f1">
-                    <input type="checkbox" class="f2" checked>
+                <div class="ring">
+                    <input type="range" min="1" max="4" value="3" class="ring_slider" id="z2">
+                    <p>3</p>
                 </div>
-                <img src="http://placekitten.com/100">
             </div>
-        </div>
-
-        <div>
-            <input type="button" value="Solve" id="solve_btn">
-        </div>
-
-        <div class="result">
-            <h3>Result:</h3>
-            <p></p>
+    
+            <div class="actions">
+                <div class="action">
+                    <div class="action_checkbox">
+                        <input type="checkbox" class="f0" checked>
+                        <input type="checkbox" class="f1" checked>
+                        <input type="checkbox" class="f2">
+                    </div>
+                    <img src="http://placekitten.com/100">
+                    <div class="action_turn_btn"><input type="button" id="t0" value="Turn"></div>
+                </div>
+                <div class="action">
+                    <div class="action_checkbox">
+                        <input type="checkbox" class="f0">
+                        <input type="checkbox" class="f1" checked>
+                        <input type="checkbox" class="f2" checked>
+                    </div>
+                    <img src="http://placekitten.com/100">
+                    <div class="action_turn_btn"><input type="button" id="t1" value="Turn"></div>
+                </div>
+                <div class="action">
+                    <div class="action_checkbox">
+                        <input type="checkbox" class="f0" checked>
+                        <input type="checkbox" class="f1">
+                        <input type="checkbox" class="f2" checked>
+                    </div>
+                    <img src="http://placekitten.com/100">
+                    <div class="action_turn_btn"><input type="button" id="t2" value="Turn"></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

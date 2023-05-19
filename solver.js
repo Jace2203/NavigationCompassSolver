@@ -8,7 +8,7 @@ let setReachedTrue = (reached, s) => {
     reached[s[0]][s[1]][s[2]] = true;
 }
 
-let solve = () => {
+let solve = (s) => {
     let reached = [];
     for (let i = 0; i < Compass.z_c[0]; i++) {
         reached.push([]);
@@ -20,25 +20,24 @@ let solve = () => {
         }
     }
 
-    let root = new Tree(null, [3,2,1]);
-    setReachedTrue(reached, [3,2,1]);
-    let next = [[3,2,1]];
+    let root = new Tree(null, s);
+    setReachedTrue(reached, s);
+    let next = [root];
     while (true)
     {
         let current = next;
         next = [];
-
+        
         current.forEach(x => {
             for (let i = 0; i < 3; i++) {
-                let y = Compass.F(x, i);
+                let y = Compass.F(x.value, i);
                 if (!checkReached(reached, y)) {
-                    root.search(x).addChild(i, y);
-                    next.push(y);
+                    next.push(x.addChild(i, y));
                     setReachedTrue(reached, y);
                 }
             }
         });
-
+        
         if (!next.length) break;
     }
 

@@ -18,7 +18,7 @@ class NavComp {
     }
 
     getSize() {
-        return this.z;
+        return this.z_c;
     }
 
     getF(i) {
@@ -42,4 +42,8 @@ class NavComp {
         }
         return t;
     }
+}
+
+const angle = (i, comp) => {
+    return comp.z[i] * 60;
 }

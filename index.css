@@ -1,3 +1,28 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: flex;
+    vertical-align: middle;
+    gap: 50px;
+}
+
+.state {
+    display: none;
+}
+
+.turn_btns {
+    display: flex;
+    width: 350;
+}
+
+.turn_btns > input {
+    flex: auto;
+    margin: 0 20px;
+}
+
 .rings {
     display: flex;
     padding: 10px 0;
@@ -18,8 +43,19 @@
 
 .action_checkbox {
     display: flex;
+    padding-bottom: 10px;
 }
 
 .action_checkbox > input {
     flex: auto;
+}
+
+.action_turn_btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.solution {
+    padding-top: 10px;
 }
