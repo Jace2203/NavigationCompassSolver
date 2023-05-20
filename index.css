@@ -3,7 +3,14 @@ html {
     margin: auto;
 }
 
-body {
+nav {
+    background: #555555;
+    padding: 10px 15px;
+    color: white;
+    margin-top: -10px;
+}
+
+.container {
     display: flex;
     vertical-align: middle;
     gap: 50px;

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>AAAA</title>
+        <title>Navigation Compass Solver</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
         <script src="NavComp.js?100"></script>
@@ -8,10 +8,12 @@
         <script src="solver.js?100"></script>
         <script src="events.js?100"></script>
         
-        <link rel="stylesheet" href="index.css?102">
+        <link rel="stylesheet" href="index.css?103">
     </head>
     <body>
+        <nav><h1>Navigation Compass Solver</h1></nav>
         <div class="container">
+        <div class="container_item">
             <div class="compass">
                 <svg width="350" height="350">
                     <circle cx="175" cy="175" r="150" style="fill:rgb(62,81,95);stroke-width:3;stroke:rgb(233,221,153)"></circle>
@@ -48,7 +50,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container_item">
             <div class="rings">
                 <div class="ring">
                     <p>🌕 🌑 🌑 🌑</p>
@@ -67,35 +69,35 @@
             <div class="actions">
                 <div class="action">
                     <div class="action_checkbox">
-                        <input type="checkbox" class="f0" checked>
-                        <input type="checkbox" class="f1" checked>
-                        <input type="checkbox" class="f2">
-                    </div>
-                    <svg width="100" height="100">
-                        <circle cx="50" cy="50" r="48" class="r0" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
-                        <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
-                        <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(62,81,95);stroke-width:2;stroke:rgb(233,221,153)"></circle>
-                    </svg>
-                    <div class="action_turn_btn"><input type="button" id="t0" value="Turn"></div>
-                </div>
-                <div class="action">
-                    <div class="action_checkbox">
-                        <input type="checkbox" class="f0">
-                        <input type="checkbox" class="f1" checked>
                         <input type="checkbox" class="f2" checked>
+                        <input type="checkbox" class="f1" checked>
+                        <input type="checkbox" class="f0">
                     </div>
                     <svg width="100" height="100">
                         <circle cx="50" cy="50" r="48" class="r0" style="fill:rgb(62,81,95);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                     </svg>
+                    <div class="action_turn_btn"><input type="button" id="t0" value="Turn"></div>
+                </div>
+                <div class="action">
+                    <div class="action_checkbox">
+                        <input type="checkbox" class="f2">
+                        <input type="checkbox" class="f1" checked>
+                        <input type="checkbox" class="f0" checked>
+                    </div>
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="48" class="r0" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
+                        <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
+                        <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(62,81,95);stroke-width:2;stroke:rgb(233,221,153)"></circle>
+                    </svg>
                     <div class="action_turn_btn"><input type="button" id="t1" value="Turn"></div>
                 </div>
                 <div class="action">
                     <div class="action_checkbox">
-                        <input type="checkbox" class="f0" checked>
-                        <input type="checkbox" class="f1">
                         <input type="checkbox" class="f2" checked>
+                        <input type="checkbox" class="f1">
+                        <input type="checkbox" class="f0" checked>
                     </div>
                     <svg width="100" height="100">
                         <circle cx="50" cy="50" r="48" class="r0" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
@@ -105,6 +107,7 @@
                     <div class="action_turn_btn"><input type="button" id="t2" value="Turn"></div>
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>
