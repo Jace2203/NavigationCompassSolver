@@ -14,7 +14,7 @@ class NavComp {
     constructor() {
         this.z = [1,4,3];
         this.z_c = Array.from(this.z, x => convert(x));
-        this.f = [[1,1,0],[0,1,1],[1,0,1]];
+        this.f = [[0,1,1],[1,1,0],[1,0,1]];
     }
 
     getSize() {
@@ -22,7 +22,7 @@ class NavComp {
     }
 
     getF(i) {
-        return f[i];
+        return this.f[i];
     }
 
     setSize(index, value) {

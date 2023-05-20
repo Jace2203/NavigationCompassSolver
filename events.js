@@ -17,6 +17,7 @@ let updateCompass = () => {
         let i = $(this).attr("id")[1];
         s[i] = $(this).attr("value");
     });
+    
     s.forEach((v, i) => {
         let t = v * angle(i, Compass);
         turn(i, t);
@@ -72,19 +73,48 @@ $(document).ready(() => {
             c += ($(this)[0].checked ? "rgb(200,190,120)" : "rgb(62,81,95)");
             c += ";stroke-width:2;stroke:rgb(233,221,153)";
             $(this).parent().siblings("svg").children(".r" + i).attr("style", c);
+
+            let action = $(this).closest(".action");
+            let index = action.attr("id")[1]
+            let f = [];
+            for (let j = 0; j < 3; j++) {
+                f.push(Number(action.children(".action_checkbox").children(".f"+j)[0].checked));
+            }
+            Compass.setAction(index, f);
         });
     });
+
+    $(".action_turn_btn>input").each(function() {
+        $(this).on("click", () => {
+            let i = $(this).closest(".action").attr("id")[1];
+            let f = Compass.getF(i);
+
+            f.forEach((v, index) => {
+                let state = $("#s" + index);
+                let s = Number(state.attr("value"));
+                let m = Compass.getSize()[index];
+                
+                if (v) {
+                    s = (s + 1) % m;
+                    state.attr("value", s);
+                }
+            });
+            
+            updateCompass();
+        })
+    })
 
     $("#solve_btn").on("click", () => {
         let s = [0,0,0];
 
-        $(".action_checkbox").each(function(index) {
-            let f = [];
-            for (let i = 0; i < 3; i++) {
-                f.push(Number($(this).children(".f"+i)[0].checked));
-            }
-            Compass.setAction(index, f);
-        });
+        // $(".action_checkbox").each(function(index) {
+        //     let f = [];
+        //     for (let i = 0; i < 3; i++) {
+        //         f.push(Number($(this).children(".f"+i)[0].checked));
+        //     }
+        //     Compass.setAction(index, f);
+        // });
+
         $(".state>input").each(function(index) {
             s[index] = Number($(this).attr("value"));
         });

@@ -3,10 +3,10 @@
         <title>Navigation Compass Solver</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-        <script src="NavComp.js?100"></script>
+        <script src="NavComp.js?101"></script>
         <script src="tree.js?100"></script>
         <script src="solver.js?100"></script>
-        <script src="events.js?100"></script>
+        <script src="events.js?101"></script>
         
         <link rel="stylesheet" href="index.css?103">
     </head>
@@ -67,7 +67,7 @@
             </div>
     
             <div class="actions">
-                <div class="action">
+                <div class="action" id="t0">
                     <div class="action_checkbox">
                         <input type="checkbox" class="f2" checked>
                         <input type="checkbox" class="f1" checked>
@@ -78,9 +78,9 @@
                         <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                     </svg>
-                    <div class="action_turn_btn"><input type="button" id="t0" value="Turn"></div>
+                    <div class="action_turn_btn"><input type="button" value="Turn"></div>
                 </div>
-                <div class="action">
+                <div class="action" id="t1">
                     <div class="action_checkbox">
                         <input type="checkbox" class="f2">
                         <input type="checkbox" class="f1" checked>
@@ -91,9 +91,9 @@
                         <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(62,81,95);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                     </svg>
-                    <div class="action_turn_btn"><input type="button" id="t1" value="Turn"></div>
+                    <div class="action_turn_btn"><input type="button" value="Turn"></div>
                 </div>
-                <div class="action">
+                <div class="action" id="t2">
                     <div class="action_checkbox">
                         <input type="checkbox" class="f2" checked>
                         <input type="checkbox" class="f1">
@@ -104,7 +104,7 @@
                         <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(62,81,95);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                     </svg>
-                    <div class="action_turn_btn"><input type="button" id="t2" value="Turn"></div>
+                    <div class="action_turn_btn"><input type="button" value="Turn"></div>
                 </div>
             </div>
         </div>
