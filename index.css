@@ -1,19 +1,66 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+
 html {
     display: table;
     margin: auto;
+    
+    font-family: "cwTeXKai", sans-serif;
+    font-weight: bold;
+    font-size: 35;
 }
 
-nav {
+body {
+    margin: 0%;
+    background: #FFF8D6;
+}
+
+#nav {
+    width: 100%;
     background: #555555;
-    padding: 10px 15px;
     color: white;
-    margin-top: -10px;
+    padding: 10px 15px;
+}
+
+.compass {
+    width: 350;
+    margin: auto;
 }
 
 .container {
     display: flex;
     vertical-align: middle;
     gap: 50px;
+}
+
+input[type="button"] {
+    width: 90px;
+    height: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #617A55;
+    border-radius: 10px;
+    background: #A4D0A4;
+    font-size: 35;
+    font-family: "cwTeXKai", sans-serif;
+    font-weight: bold;
+    color: #394867;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border: 4px solid;
+    border-radius: 13px;
+    border-color: #3C3D3D;
+    background: #997F4D;
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]:checked {
+    background-color: orange;
 }
 
 .state {
@@ -90,5 +137,38 @@ nav {
 }
 
 .solution {
-    padding-top: 10px;
+    padding-left: 20px;
+    padding-top: 30px;
+
+    font-size: 30;
+    font-family: "cwTeXKai", sans-serif;
+    font-weight: bold;
+    color: #394867;
+}
+
+#solve_btn {
+    width: 76;
+    height: 48;
+}
+
+.result {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.result>input[type="button"] {
+    margin-top: -9px;
+}
+
+.result>input[type="text"] {
+    width: 300;
+    height: 100;
+    border-radius: 10px;
+    text-align: center;
+    
+    font-size: 40;
+    font-family: "cwTeXKai", sans-serif;
+    font-weight: bold;
+    color: #394867;
 }

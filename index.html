@@ -1,17 +1,17 @@
 <html>
     <head>
-        <title>Navigation Compass Solver</title>
+        <title>引航羅盤解謎器</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-        <script src="NavComp.js?101"></script>
-        <script src="tree.js?100"></script>
-        <script src="solver.js?100"></script>
-        <script src="events.js?101"></script>
+        <script src="NavComp.js?104"></script>
+        <script src="tree.js?101"></script>
+        <script src="solver.js?101"></script>
+        <script src="events.js?102"></script>
         
-        <link rel="stylesheet" href="index.css?103">
+        <link rel="stylesheet" href="index.css?105">
     </head>
     <body>
-        <nav><h1>Navigation Compass Solver</h1></nav>
+        <div id="nav"><h1>引航羅盤解謎器</h1></div>
         <div class="container">
         <div class="container_item">
             <div class="compass">
@@ -19,11 +19,11 @@
                     <circle cx="175" cy="175" r="150" style="fill:rgb(62,81,95);stroke-width:3;stroke:rgb(233,221,153)"></circle>
                     <circle cx="175" cy="175" r="100" style="fill:rgb(62,81,95);stroke-width:3;stroke:rgb(233,221,153)"></circle>
                     <circle cx="175" cy="175" r="50" style="fill:rgb(62,81,95);stroke-width:3;stroke:rgb(233,221,153)"></circle>
-                    <rect id="light_0" x="28" y="170" width="46" height="10"
+                    <rect id="light_0" x="26" y="170" width="48" height="10"
                     style="fill:aqua"></rect>
-                    <rect id="light_1" x="78" y="170" width="46" height="10"
+                    <rect id="light_1" x="76" y="170" width="48" height="10"
                     style="fill:aqua"></rect>
-                    <rect id="light_2" x="128" y="170" width="46" height="10"
+                    <rect id="light_2" x="126" y="170" width="48" height="10"
                     style="fill:aqua"></rect>
                 </svg>
                 <div class="state">
@@ -32,20 +32,18 @@
                     <input type="range" min="0" max="2" value="1" id="s2">
                 </div>
                 <div class="turn_btns">
-                    <input type="button" id="state_0" value="First Ring">
-                    <input type="button" id="state_1" value="Second Ring">
-                    <input type="button" id="state_2" value="Third Ring">
+                    <input type="button" id="state_0" value="外">
+                    <input type="button" id="state_1" value="中">
+                    <input type="button" id="state_2" value="內">
                 </div>
             </div>
             
             <div class="solution">
-                <div>
-                    <input type="button" value="Solve" id="solve_btn">
-                </div>
 
                 <div class="result">
-                    <h3>Result:</h3>
-                    <p></p>
+                    <h3>結果:</h3>
+                    <input type="text" readonly>
+                    <input type="button" value="解" id="solve_btn">
                 </div>
             </div>
         </div>
@@ -78,7 +76,7 @@
                         <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                     </svg>
-                    <div class="action_turn_btn"><input type="button" value="Turn"></div>
+                    <div class="action_turn_btn"><input type="button" value="轉"></div>
                 </div>
                 <div class="action" id="t1">
                     <div class="action_checkbox">
@@ -91,7 +89,7 @@
                         <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(62,81,95);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                     </svg>
-                    <div class="action_turn_btn"><input type="button" value="Turn"></div>
+                    <div class="action_turn_btn"><input type="button" value="轉"></div>
                 </div>
                 <div class="action" id="t2">
                     <div class="action_checkbox">
@@ -104,7 +102,7 @@
                         <circle cx="50" cy="50" r="32" class="r1" style="fill:rgb(62,81,95);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                         <circle cx="50" cy="50" r="16" class="r2" style="fill:rgb(200,190,120);stroke-width:2;stroke:rgb(233,221,153)"></circle>
                     </svg>
-                    <div class="action_turn_btn"><input type="button" value="Turn"></div>
+                    <div class="action_turn_btn"><input type="button" value="轉"></div>
                 </div>
             </div>
         </div>

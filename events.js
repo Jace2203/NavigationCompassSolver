@@ -17,7 +17,6 @@ let updateCompass = () => {
         let i = $(this).attr("id")[1];
         s[i] = $(this).attr("value");
     });
-    
     s.forEach((v, i) => {
         let t = v * angle(i, Compass);
         turn(i, t);
@@ -106,15 +105,6 @@ $(document).ready(() => {
 
     $("#solve_btn").on("click", () => {
         let s = [0,0,0];
-
-        // $(".action_checkbox").each(function(index) {
-        //     let f = [];
-        //     for (let i = 0; i < 3; i++) {
-        //         f.push(Number($(this).children(".f"+i)[0].checked));
-        //     }
-        //     Compass.setAction(index, f);
-        // });
-
         $(".state>input").each(function(index) {
             s[index] = Number($(this).attr("value"));
         });
@@ -123,13 +113,19 @@ $(document).ready(() => {
         let str = "";
         if (result.length) {
             result.forEach(value => {
-                str += (value + 1) + " ";
+                let chr = "";
+                switch (value) {
+                    case 0: chr = "壹" ; break;
+                    case 1: chr = "貳" ; break;
+                    case 2: chr = "叁" ; break;
+                }
+                str += chr + " ";
             });
         } else {
-            str = "No Solution";
+            str = "無解";
         }
 
-        $(".result>p").html(str);
+        $(".result>input[type='text']").attr("value", str);
     })
 
     updateCompass();
